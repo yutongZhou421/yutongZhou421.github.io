@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/null">
-  <link rel="icon" type="image/png" href="/null">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -127,18 +127,6 @@
             </li>
           
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                About
-              </a>
-            </li>
-          
-        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
@@ -184,7 +172,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      60 words
+      323 words
     </span>
   
 
@@ -194,7 +182,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      6
        minutes
     </span>
   
@@ -243,9 +231,18 @@
 </ul>
 <p>Define…</p>
 <ul>
-<li>The beauty of an array </li>
-<li></li>
+<li><p>The beauty of an array is defined as the sum of all array elements after each of them is divided by x: </p>
+<p>with $b_i=$one element in the array b [n], beauty $=\sum_{i=1}^{k}\lceil\frac{b_i}{x}\rceil$</p>
+</li>
+<li><p>Say there is an array [ 6 , 4 , 11 ] and the beauty of it can be = 7 or = 8. In the case of 7 we take the last two numbers, sum them up and calculate the beauty, which yields an result of 7</p>
+</li>
 </ul>
+<p><strong>Task: Define the maximum and minimum beauty of a given input</strong></p>
+<p>The crux of the problem is to realize that we are taking the ceiling and it means that we will get the most out of a division if the number $b_i$ is not divisible by x. If $b_i\%x=0$ , then the ceiling makes no difference.</p>
+<p>The maximal beauty= $\lceil\frac{\text{every number in the array}}{x}\rceil$</p>
+<p>The minimal beauty= $\lceil\frac{\sum\text{all numbers in the array}}{x}\rceil$</p>
+<p>Solution without any data structure</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;math.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> t;<br>    <span class="hljs-built_in">cin</span> &gt;&gt; t;<br>    <span class="hljs-keyword">while</span> (t &gt; <span class="hljs-number">0</span>)<br>    &#123;<br>        <span class="hljs-keyword">long</span> n;<br>        <span class="hljs-keyword">double</span> x;<br>        <span class="hljs-built_in">cin</span> &gt;&gt; n &gt;&gt; x;<br>        <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> max = <span class="hljs-number">0</span>, min = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (n &gt; <span class="hljs-number">0</span>)<br>        &#123;<br>            <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> tmp;<br>            <span class="hljs-built_in">cin</span> &gt;&gt; tmp;<br>            min += tmp; <span class="hljs-comment">// minimum = ceiling of (sum / x)</span><br>            max += <span class="hljs-built_in">ceil</span>(tmp/x); <span class="hljs-comment">// maximum = sum of ceiling (number / x)</span><br>            n--;<br>        &#125;<br>        min = <span class="hljs-built_in">ceil</span>(min/x);<br>        <span class="hljs-built_in">cout</span> &lt;&lt; min &lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt; max &lt;&lt; <span class="hljs-built_in">endl</span>;<br>        t--;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
