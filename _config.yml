@@ -1,0 +1,134 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: Hexo
+subtitle: ''
+description: ''
+keywords:
+author: Yutong
+language: en
+timezone: ''
+
+# URL
+## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+url: https://yutongzhou421.github.io
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link:
+  enable: true # Open external links in new tab
+  field: site # Apply to the whole site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# Category & Tag
+default_category: ''
+category_map:
+tag_map:
+
+# Metadata elements
+## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
+meta_generator: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+## updated_option supports 'mtime', 'date', 'empty'
+updated_option: 'mtime'
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude file(s)
+## include:/exclude: options only apply to the 'source/' folder
+include:
+exclude:
+ignore:
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: fluid
+
+# Deployment
+## Docs: https://hexo.io/docs/one-command-deployment
+deploy:
+  type: git
+  repo: git@github.com:yutongZhou421/yutongZhou421.github.io.git
+  branch: master  # Or 'main' / 'gh-pages' depending on where GitHub Pages serves your live HTML
+
+# ---------------------------------------------------------------
+# 以下为恢复自原部署站的 Fluid v1.8.7 主题配置
+# Recovered from the old deployed site (Fluid v1.8.7)
+# 对照: 2020/2021 目录下旧页面 + themes/fluid/_config.yml（默认值）
+# ---------------------------------------------------------------
+theme_config:
+  navbar:
+    # 旧站导航栏左侧品牌名
+    blog_title: "Yutong"
+    # 旧站导航栏菜单（仅 4 项: 首页/归档/分类/标签）
+    menu:
+      - { key: "home", link: "/", icon: "iconfont icon-home-fill" }
+      - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
+      - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
+      - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
+  index:
+    # 旧站首页打字机副标题
+    slogan:
+      text: "Hey, Yutong here, and you are?"
+    # 首页头图与高度等保持主题默认（/img/default.png、100vh、mask 0.3），与旧站一致
+  search:
+    enable: true
+    path: /local-search.xml
+    generate_path: /local-search.xml
+    field: post
+  # 其余配置（post/page/404/footer 等）均保持主题默认，与旧站输出一致
+  # 如需查看所有选项: themes/fluid/_config.yml
