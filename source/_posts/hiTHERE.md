@@ -9,7 +9,7 @@ Hi there, welcome to my blog!
 
 ## Who I am
 
-Some passionate developer.
+Some passionate developer. Love DB, love algorithms.
 
 ## What I post
 
