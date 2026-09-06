@@ -2,9 +2,7 @@
 title: "Hi There"
 date: 2020-11-01
 categories:
-  - Others
-tags:
-  - Others
+  - random
 ---
 
 Hi there, welcome to my blog!

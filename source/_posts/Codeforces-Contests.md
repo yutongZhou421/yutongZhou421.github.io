@@ -1,8 +1,8 @@
 ---
 title: "Codeforces Contests"
 date: 2021-01-06
-tags:
-  - Contest
+categories:
+  - codeforces
 ---
 
 # Main Focus
